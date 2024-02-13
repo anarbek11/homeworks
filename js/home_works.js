@@ -80,3 +80,56 @@ const skipTime = () => {
 
 
 skipTime()
+
+
+
+
+
+const btnStart = document.querySelector('#start')
+const btnStop = document.querySelector('#stop')
+const btnReset = document.querySelector('#reset')
+
+let counterValue = 0
+let interval
+let isRunning = false
+
+
+const startCounter = () => {
+    if (!isRunning){
+        interval = setInterval(() => {
+            counterValue++;
+            document.getElementById('seconds').innerText = counterValue
+        }, 1000)
+        isRunning = true
+    }
+}
+
+
+const stopCounter = () => {
+    clearInterval(interval);
+    isRunning = false
+}
+
+const resetCounter = () => {
+    clearInterval(interval);
+    counterValue = 0
+    document.getElementById('seconds').innerText = counterValue
+    isRunning = false
+
+}
+
+
+btnStart.addEventListener('click', () => {
+    startCounter()
+})
+
+
+btnStop.addEventListener('click', () => {
+    stopCounter()
+
+})
+
+
+btnReset.addEventListener('click', () => {
+    resetCounter()
+})

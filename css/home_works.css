@@ -206,7 +206,7 @@
 .time_block {
     display: flex;
     width: 500px;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .stopwatch {
