@@ -85,36 +85,36 @@ skipTime()
 
 
 
+
+
+
 const btnStart = document.querySelector('#start')
 const btnStop = document.querySelector('#stop')
 const btnReset = document.querySelector('#reset')
 
 let counterValue = 0
 let interval
-let isRunning = false
 
 
 const startCounter = () => {
-    if (!isRunning){
+    if (!interval){
         interval = setInterval(() => {
             counterValue++;
             document.getElementById('seconds').innerText = counterValue
         }, 1000)
-        isRunning = true
     }
 }
 
 
 const stopCounter = () => {
     clearInterval(interval);
-    isRunning = false
+    interval = true
 }
 
 const resetCounter = () => {
     clearInterval(interval);
     counterValue = 0
     document.getElementById('seconds').innerText = counterValue
-    isRunning = false
 
 }
 
@@ -133,3 +133,5 @@ btnStop.addEventListener('click', () => {
 btnReset.addEventListener('click', () => {
     resetCounter()
 })
+
+

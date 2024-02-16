@@ -59,7 +59,6 @@
     display: flex;
     overflow: hidden;
     background-repeat: no-repeat;
-    /*background-image: url(../images/background.gif)*/
 }
 .parent_block:hover {
     cursor: crosshair;
